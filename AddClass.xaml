@@ -1,0 +1,29 @@
+﻿<Window x:Name="ClassifyDialog" x:Class="ClassifyWPF.AddClass"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="279.167" Width="812" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True" Icon="Resources/ClassifyIcon.png" Background="#FFF0F0F0">
+    <Grid x:Name="ClassifyDialogGrid">
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="93" Stroke="#FFF0F0F0" VerticalAlignment="Top" Width="806"/>
+        <Label Content="Classify&#xA;{&#xD;&#xA;    Class and Namespace Tool&#xA;};"  Margin="0,10,-10,-10" HorizontalAlignment="Right" Width="812"/>
+        <Label Content="Class:" HorizontalAlignment="Left" Height="28" Margin="32,98,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Namespace:" HorizontalAlignment="Left" Height="28" Margin="32,137,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Base class:" HorizontalAlignment="Left" Height="28" Margin="32,173,0,0" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Class declaration:" HorizontalAlignment="Left" Height="28" Margin="318,137,0,0" VerticalAlignment="Top" Width="134"/>
+        <Label Content="Class implementation:" HorizontalAlignment="Left" Height="24" Margin="318,169,0,0" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="ClassifyClassBox" HorizontalAlignment="Left" Height="28" Margin="128,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="ClassifyClassBox_TextChanged"/>
+        <TextBox x:Name="ClassifyNamespaceBox" HorizontalAlignment="Left" Height="28" Margin="128,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="ClassifyNamespaceBox_TextChanged"/>
+        <TextBox x:Name="ClassifyBaseClassBox" HorizontalAlignment="Left" Height="28" Margin="128,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="ClassifyBaseClassBox_TextChanged"/>
+        <TextBox x:Name="ClassifyDeclerationBox" HorizontalAlignment="Left" Height="28" Margin="457,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="ClassifyDeclerationBox_TextChanged"/>
+        <TextBox x:Name="ClassifyImplementationBox" HorizontalAlignment="Left" Height="28" Margin="457,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="ClassifyImplementationBox_TextChanged"/>
+
+        <Button x:Name="ClassifyOKButton" Content="OK" HorizontalAlignment="Left" Margin="716,248,0,0" VerticalAlignment="Top" Width="74" Click="ClassifyOKButton_Click" />
+        <Button x:Name="ClassifyCancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="626,248,0,0" Width="74" IsCancel="True" Height="20" VerticalAlignment="Top" />
+        <CheckBox x:Name="ConstructorDestructor" Content="Create Constructor/Destructor" HorizontalAlignment="Left" Margin="457,111,0,0" VerticalAlignment="Top" IsChecked="True" Checked="ConstructorDestructor_Checked"/>
+        <RadioButton ToolTip="Absolute paths are in windows directory. Ex: C:/User/Projects/Classify/NewClass" x:Name="AbsolutePath" Content="Absolute Paths" HorizontalAlignment="Left" Margin="660,179,0,0" VerticalAlignment="Top" Checked="AbsolutePath_Checked" IsChecked="True" GroupName="Paths"/>
+        <RadioButton ToolTip="Relative paths are in the project directory, they will be created locally inside the project" x:Name="RelativePath" Content="Relative Paths" HorizontalAlignment="Left" Margin="660,143,0,0" VerticalAlignment="Top" Checked="RelativePath_Checked" GroupName="Paths" IsChecked="True"/>
+        <Border BorderBrush="Black" BorderThickness="2"/>
+    </Grid>
+</Window>
